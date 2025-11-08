@@ -1,7 +1,8 @@
-# 📘 Data Dictionary
+
+# 📘 Data Dictionary and Dataset Overview
 
 This repository contains three major datasets covering **macroeconomic indicators**, **credit risk data**, and **governance indicators**.
-Each section below lists all data attributes with concise, plain-language explanations.
+Each dataset helps explain different aspects of economic, financial, and institutional performance across countries.
 
 ---
 
@@ -9,6 +10,14 @@ Each section below lists all data attributes with concise, plain-language explan
 
 **Source:** National statistics and international databases
 **Coverage:** Multiple countries, various years and frequencies
+
+### 📊 Summary
+
+This dataset tracks key **economic performance indicators** for countries over time — such as inflation, GDP, trade, employment, exchange rates, and reserves.
+It shows **how an economy is performing and evolving**, helping identify trends like rising prices, growing output, or trade shifts.
+**In short:** Measures the **overall health and activity of national economies**.
+
+---
 
 | **Attribute**                                                  | **Description**                                                                              |
 | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
@@ -56,6 +65,14 @@ Each section below lists all data attributes with concise, plain-language explan
 **Source:** Global Emerging Markets Consortium (World Bank, EBRD, etc.)
 **Coverage:** Default and recovery rates for public, private, and sovereign borrowers
 
+### 📊 Summary
+
+This dataset records **default and recovery rates** for both **public (government)** and **private (corporate)** borrowers in emerging markets.
+It shows **how risky lending has been** — how often debts weren’t repaid (defaults) and how much lenders recovered afterward.
+**In short:** Measures **credit risk and financial resilience** of countries and companies over time.
+
+---
+
 | **Attribute**                 | **Description**                                                                        |
 | ----------------------------------- | -------------------------------------------------------------------------------------------- |
 | Historical Public Default Rates     | Annual record of how often governments or state entities failed to repay debts (1994–2024). |
@@ -78,6 +95,15 @@ Each section below lists all data attributes with concise, plain-language explan
 **Source:** World Bank
 **Coverage:** 200+ economies, 1996–2023
 **Purpose:** Measures quality of governance and institutional strength
+
+### 📊 Summary
+
+This dataset evaluates **how well countries are governed** using six key dimensions:
+Voice & Accountability, Political Stability, Government Effectiveness, Regulatory Quality, Rule of Law, and Control of Corruption.
+It shows **how strong, transparent, and effective institutions are**, and how much corruption affects public administration.
+**In short:** Measures the **quality of governance and institutional trustworthiness** across countries.
+
+---
 
 | **Indicator**                                   | **Description**                                                                    |
 | ----------------------------------------------------- | ---------------------------------------------------------------------------------------- |
