@@ -1,0 +1,1444 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://gemr-kg.org/ontology#"
+     xml:base="https://gemr-kg.org/ontology"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:gemr="https://gemr-kg.org/ontology#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:fibo-be-ge-ge="https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/"
+     xmlns:fibo-ind-ei-ei="https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/"
+     xmlns:fibo-fnd-utl-av="https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"
+     xmlns:fibo-fnd-acc-cur="https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/"
+     xmlns:fibo-ind-ind-ind="https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"
+     xmlns:AnnotationVocabulary="https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+     xmlns:IdentifiersAndIndices="https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/">
+    <owl:Ontology rdf:about="https://gemr-kg.org/ontology">
+        <owl:versionIRI rdf:resource="https://gemr-kg.org/ontology/1.0.0"/>
+        <owl:imports rdf:resource="https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/"/>
+        <owl:imports rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/"/>
+        <owl:imports rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"/>
+        <owl:imports rdf:resource="https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/"/>
+        <owl:imports rdf:resource="https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"/>
+        <dc:creator>GEMR-KG Project Team</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-11-09</dc:date>
+        <dc:description>Global Emerging Markets Risk Knowledge Graph Ontology - Integrating macroeconomic, governance, and credit risk data for comprehensive country-level risk analysis across Brazil, China, Mexico, Philippines, Poland, and Thailand (2002-2023).</dc:description>
+        <dc:title>GEMR-KG: Global Emerging Markets Risk Knowledge Graph Ontology</dc:title>
+        <rdfs:comment>This ontology addresses four core challenges: (1) Inadequate comprehensive risk modeling integrating macroeconomic, financial, governance, and temporal data; (2) Poor understanding of systemic contagion and geographic spillovers; (3) Difficulty extracting actionable insights about market crashes and country similarity; (4) Inaccessible siloed data requiring intuitive query interfaces.</rdfs:comment>
+        <rdfs:label>GEMR-KG Ontology</rdfs:label>
+        <owl:versionInfo>Version 1.0.0 - Initial release with 27 validated cross-dataset relationships, temporal chains, and 6 countries over 22 years</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#range -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#range"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#example -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#gYear -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#gYear"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://gemr-kg.org/ontology#affectedBy -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#affectedBy">
+        <owl:inverseOf rdf:resource="https://gemr-kg.org/ontology#affects"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#ContagionEvent"/>
+        <rdfs:comment>Indicates that a country is affected by a contagion event (currency crisis, trade shock, political instability) originating from another country.</rdfs:comment>
+        <rdfs:label>affected by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#affects -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#affects">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#ContagionEvent"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <rdfs:comment>Indicates which countries are affected by a contagion event.</rdfs:comment>
+        <rdfs:label>affects</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#belongsToCluster -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#belongsToCluster">
+        <owl:inverseOf rdf:resource="https://gemr-kg.org/ontology#hasClusterMember"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#CountryCluster"/>
+        <rdfs:comment>Associates a country with its similarity cluster based on economic structure, governance profile, or risk characteristics.</rdfs:comment>
+        <rdfs:label>belongs to cluster</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#causesWithLag -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#causesWithLag">
+        <rdfs:subPropertyOf rdf:resource="https://gemr-kg.org/ontology#hasTemporalRelationship"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:comment>Represents a lagged causal relationship where one indicator at time t causes another indicator at time t+lag. Based on validated temporal analysis showing governance-economic-financial chains.</rdfs:comment>
+        <rdfs:label>causes with lag</rdfs:label>
+        <skos:example>Control_of_Corruption(t-1) causes GDP_Growth(t) with 1-year lag (Thailand: r=0.563, p=0.010)</skos:example>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#hasClusterMember -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#hasClusterMember">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#CountryCluster"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <rdfs:comment>Lists the member countries of a similarity cluster.</rdfs:comment>
+        <rdfs:label>has cluster member</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#hasContagionType -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#hasContagionType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#ContagionEvent"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#ContagionType"/>
+        <rdfs:comment>Specifies the type of contagion: trade-based, currency spillover, or political cascade.</rdfs:comment>
+        <rdfs:label>has contagion type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#hasCountry -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#hasCountry">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <rdfs:comment>Associates an observation with the country it describes.</rdfs:comment>
+        <rdfs:label>has country</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#hasIndicator -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#hasIndicator">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#Indicator"/>
+        <rdfs:comment>Associates an observation with the specific indicator being measured.</rdfs:comment>
+        <rdfs:label>has indicator</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#hasObservation -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#hasObservation">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:comment>Links a country to its observations across time and indicators.</rdfs:comment>
+        <rdfs:label>has observation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#hasRegion -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#hasRegion">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#GeographicRegion"/>
+        <rdfs:comment>Associates a country with its geographic region (Asia, Latin America, Europe).</rdfs:comment>
+        <rdfs:label>has region</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#hasRiskScore -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#hasRiskScore">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#RiskScore"/>
+        <rdfs:comment>Associates a country with its comprehensive risk score for a given year.</rdfs:comment>
+        <rdfs:label>has risk score</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#hasTemporalRelationship -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#hasTemporalRelationship">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:comment>General property for temporal relationships between observations across time periods.</rdfs:comment>
+        <rdfs:label>has temporal relationship</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#hasYear -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#hasYear">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#Year"/>
+        <rdfs:comment>Associates an observation with the year it was measured.</rdfs:comment>
+        <rdfs:label>has year</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#leadingIndicatorFor -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#leadingIndicatorFor">
+        <rdfs:subPropertyOf rdf:resource="https://gemr-kg.org/ontology#hasTemporalRelationship"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:comment>Indicates that one indicator predicts another with a lead time (e.g., stock market leads defaults by 6-18 months).</rdfs:comment>
+        <rdfs:label>leading indicator for</rdfs:label>
+        <skos:example>Stock market decline &gt;30% is a leading indicator for default spike 1-2 years later</skos:example>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#negativelyCorrelatedWith -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#negativelyCorrelatedWith">
+        <rdfs:subPropertyOf rdf:resource="https://gemr-kg.org/ontology#hasTemporalRelationship"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:comment>Indicates a negative correlation between two indicators (as one increases, the other decreases).</rdfs:comment>
+        <rdfs:label>negatively correlated with</rdfs:label>
+        <skos:example>GDP_Growth negatively correlated with Default_Rate: r=-0.343 (Brazil)</skos:example>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#originatesFrom -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#originatesFrom">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#ContagionEvent"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <rdfs:comment>Identifies the source country of a contagion event.</rdfs:comment>
+        <rdfs:label>originates from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#positivelyCorrelatedWith -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#positivelyCorrelatedWith">
+        <rdfs:subPropertyOf rdf:resource="https://gemr-kg.org/ontology#hasTemporalRelationship"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:comment>Indicates a positive correlation between two indicators (both increase or decrease together).</rdfs:comment>
+        <rdfs:label>positively correlated with</rdfs:label>
+        <skos:example>Control_of_Corruption positively correlated with GDP_Growth: r=0.563 (Thailand)</skos:example>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#servesAsProxyFor -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#servesAsProxyFor">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Indicator"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#Indicator"/>
+        <rdfs:comment>Indicates that one indicator serves as a proxy for another unavailable indicator (e.g., Public Default Rate proxies for Sovereign Default Rate).</rdfs:comment>
+        <rdfs:label>serves as proxy for</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#similarTo -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#similarTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <rdfs:comment>Indicates similarity between two countries based on economic structure, governance profile, and risk characteristics. Symmetric property.</rdfs:comment>
+        <rdfs:label>similar to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#triggersContagion -->
+
+    <owl:ObjectProperty rdf:about="https://gemr-kg.org/ontology#triggersContagion">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <rdfs:range rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <rdfs:comment>Indicates that a crisis in one country triggers contagion to another country. Transitive property (if A triggers B, and B triggers C, then A triggers C).</rdfs:comment>
+        <rdfs:label>triggers contagion</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://gemr-kg.org/ontology#contagionLagMonths -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#contagionLagMonths">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#ContagionEvent"/>
+        <rdfs:comment>The lag in months between the source event and its impact on affected countries.</rdfs:comment>
+        <rdfs:label>contagion lag (months)</rdfs:label>
+        <rdfs:range rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"></rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#contagionRiskScore -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#contagionRiskScore">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#RiskScore"/>
+        <rdfs:comment>Component score (0-100) measuring contagion risk from regional crises and trade partners.</rdfs:comment>
+        <rdfs:label>contagion risk score</rdfs:label>
+        <rdfs:range rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#contagionStrength -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#contagionStrength">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#ContagionEvent"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>high</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>low</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>moderate</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Qualitative assessment of contagion strength: high, moderate, or low.</rdfs:comment>
+        <rdfs:label>contagion strength</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#correlationCoefficient -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#correlationCoefficient">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:comment>Pearson correlation coefficient between two indicators, ranging from -1 to +1.</rdfs:comment>
+        <rdfs:label>correlation coefficient</rdfs:label>
+        <rdfs:range rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#countryCode -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#countryCode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <rdfs:comment>ISO 3166-1 alpha-3 country code (e.g., BRA, CHN, MEX, PHL, POL, THA).</rdfs:comment>
+        <rdfs:label>country code</rdfs:label>
+        <rdfs:range></rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#countryName -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#countryName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <rdfs:comment>Full name of the country.</rdfs:comment>
+        <rdfs:label>country name</rdfs:label>
+        <rdfs:range></rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#coverageRatio -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#coverageRatio">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Indicator"/>
+        <rdfs:comment>Ratio of available data points to expected data points (0.0 to 1.0), indicating data completeness.</rdfs:comment>
+        <rdfs:label>coverage ratio</rdfs:label>
+        <rdfs:range rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#dataAvailability -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#dataAvailability">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Indicator"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>complete</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>missing</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>partial</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>proxy</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Data quality annotation: complete (100% coverage), partial (some gaps), proxy (uses substitute indicator), or missing (not available).</rdfs:comment>
+        <rdfs:label>data availability</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#defaultRiskScore -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#defaultRiskScore">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#RiskScore"/>
+        <rdfs:comment>Component score (0-100) based on private and public default rates.</rdfs:comment>
+        <rdfs:label>default risk score</rdfs:label>
+        <rdfs:range rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#economicHealthScore -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#economicHealthScore">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#RiskScore"/>
+        <rdfs:comment>Component score (0-100) aggregating GDP growth, reserves, trade balance, inflation, and industrial production.</rdfs:comment>
+        <rdfs:label>economic health score</rdfs:label>
+        <rdfs:range rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#externalVulnerabilityScore -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#externalVulnerabilityScore">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#RiskScore"/>
+        <rdfs:comment>Component score (0-100) measuring exchange rate volatility, trade deficit, and reserve depletion risk.</rdfs:comment>
+        <rdfs:label>external vulnerability score</rdfs:label>
+        <rdfs:range rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#governanceScore -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#governanceScore">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#RiskScore"/>
+        <rdfs:comment>Component score (0-100) aggregating all six WGI governance indicators (CC, PV, GE, RL, RQ, VA).</rdfs:comment>
+        <rdfs:label>governance score</rdfs:label>
+        <rdfs:range rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#lagPeriodYears -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#lagPeriodYears">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:comment>Number of years between cause and effect in temporal relationships (e.g., 1 for t-1 → t).</rdfs:comment>
+        <rdfs:label>lag period (years)</rdfs:label>
+        <rdfs:range rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"></rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#observationValue -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#observationValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:comment>The numerical value of an observation for a specific indicator, country, and year.</rdfs:comment>
+        <rdfs:label>observation value</rdfs:label>
+        <rdfs:range rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#pValue -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#pValue">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:comment>Statistical significance level (p-value) for correlation or causal relationships.</rdfs:comment>
+        <rdfs:label>p-value</rdfs:label>
+        <rdfs:range rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#relationshipStrength -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#relationshipStrength">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>moderate</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>strong</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>weak</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Qualitative assessment of relationship strength based on correlation coefficient and significance.</rdfs:comment>
+        <rdfs:label>relationship strength</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#riskTier -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#riskTier">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#RiskScore"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>ELEVATED_RISK</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>HIGH_RISK</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>LOW_RISK</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>MODERATE_RISK</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Risk classification: LOW_RISK (70-100), MODERATE_RISK (50-70), ELEVATED_RISK (30-50), HIGH_RISK (&lt;30).</rdfs:comment>
+        <rdfs:label>risk tier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#similarityScore -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#similarityScore">
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <rdfs:comment>Similarity score (0.0 to 1.0) between two countries based on economic structure, governance, and risk profiles.</rdfs:comment>
+        <rdfs:label>similarity score</rdfs:label>
+        <rdfs:range rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#totalRiskScore -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#totalRiskScore">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#RiskScore"/>
+        <rdfs:comment>Comprehensive country risk score (0-100) aggregating governance, economic health, default risk, external vulnerability, and contagion risk components.</rdfs:comment>
+        <rdfs:label>total risk score</rdfs:label>
+        <rdfs:range rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"></rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#yearValue -->
+
+    <owl:DatatypeProperty rdf:about="https://gemr-kg.org/ontology#yearValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://gemr-kg.org/ontology#Year"/>
+        <rdfs:comment>The calendar year value (2002-2023).</rdfs:comment>
+        <rdfs:label>year value</rdfs:label>
+        <rdfs:range rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear"></rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://gemr-kg.org/ontology#CPI -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#CPI">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#MacroeconomicIndicator"/>
+        <rdfs:comment>Consumer Price Index measuring inflation rates in emerging markets. Multiple variants available (year-over-year %, nominal, seasonally adjusted).</rdfs:comment>
+        <rdfs:label>Consumer Price Index (CPI)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#ContagionEvent -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#ContagionEvent">
+        <rdfs:comment>Represents a systemic crisis event that spreads from one country to others through trade, currency, or political channels.</rdfs:comment>
+        <rdfs:label>Contagion Event</rdfs:label>
+        <skos:example>Thailand Currency Crisis 1997 triggering regional contagion to Philippines and China</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#ContagionType -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#ContagionType">
+        <rdfs:comment>Classification of contagion mechanisms: Trade-Based, Currency Spillover, or Political Cascade.</rdfs:comment>
+        <rdfs:label>Contagion Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#ControlOfCorruption -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#ControlOfCorruption">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#GovernanceIndicator"/>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#CoreCPI -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#CoreCPI">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#CPI"/>
+        <rdfs:comment>Core CPI excluding volatile food and energy prices, providing clearer inflation trend signal.</rdfs:comment>
+        <rdfs:label>Core CPI</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Country -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#Country">
+        <rdfs:comment>An emerging market country in the GEMR-KG dataset: Brazil, China, Mexico, Philippines, Poland, or Thailand.</rdfs:comment>
+        <rdfs:label>Country</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#CountryCluster -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#CountryCluster">
+        <rdfs:comment>A group of countries with similar economic structures, governance profiles, or risk characteristics.</rdfs:comment>
+        <rdfs:label>Country Cluster</rdfs:label>
+        <skos:example>High Governance Cluster: Poland; Weak Governance Cluster: Brazil, Mexico</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#CreditRiskIndicator -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#CreditRiskIndicator">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#Indicator"/>
+        <rdfs:comment>Credit risk metrics from IFC_GEM dataset including default rates and recovery rates.</rdfs:comment>
+        <rdfs:label>Credit Risk Indicator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#DefaultRate -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#DefaultRate">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#CreditRiskIndicator"/>
+        <rdfs:comment>Measures the percentage of debt obligations that enter default status.</rdfs:comment>
+        <rdfs:label>Default Rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#ExchangeRate -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#ExchangeRate">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#MacroeconomicIndicator"/>
+        <rdfs:comment>Currency exchange rates including official rate (LCU per USD), real effective exchange rate, and nominal effective exchange rate.</rdfs:comment>
+        <rdfs:label>Exchange Rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Exports -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#Exports">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#MacroeconomicIndicator"/>
+        <rdfs:comment>Merchandise export values in current USD, constant 2010 USD, and price indices.</rdfs:comment>
+        <rdfs:label>Exports</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#ForeignReserves -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#ForeignReserves">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#MacroeconomicIndicator"/>
+        <rdfs:comment>Total foreign reserves and months of import cover, critical for assessing external vulnerability and default risk.</rdfs:comment>
+        <rdfs:label>Foreign Reserves</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#GDP -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#GDP">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#MacroeconomicIndicator"/>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#GeographicRegion -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#GeographicRegion">
+        <rdfs:comment>Geographic classification: Asia, Latin America, or Europe.</rdfs:comment>
+        <rdfs:label>Geographic Region</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#GovernanceIndicator -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#GovernanceIndicator">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#Indicator"/>
+        <rdfs:comment>Governance quality metrics from World Governance Indicators (WGI) dataset covering six dimensions.</rdfs:comment>
+        <rdfs:label>Governance Indicator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#GovernmentEffectiveness -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#GovernmentEffectiveness">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#GovernanceIndicator"/>
+        <rdfs:comment>WGI indicator (GE) capturing quality of public services, civil service independence, policy formulation, and government credibility. Range: -2.5 to +2.5 (higher = better).</rdfs:comment>
+        <rdfs:label>Government Effectiveness</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Imports -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#Imports">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#MacroeconomicIndicator"/>
+        <rdfs:comment>Merchandise import values in current USD, constant 2010 USD, and price indices.</rdfs:comment>
+        <rdfs:label>Imports</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Indicator -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#Indicator">
+        <rdfs:comment>Abstract parent class for all measurable economic, governance, and financial indicators.</rdfs:comment>
+        <rdfs:label>Indicator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#IndustrialProduction -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#IndustrialProduction">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#MacroeconomicIndicator"/>
+        <rdfs:comment>Manufacturing and industrial output in constant 2010 USD, indicator of corporate sector health and default risk.</rdfs:comment>
+        <rdfs:label>Industrial Production</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#MacroeconomicIndicator -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#MacroeconomicIndicator">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#Indicator"/>
+        <rdfs:comment>Economic indicators from GemDataEXTR dataset including GDP, inflation, trade, reserves, exchange rates, and production metrics.</rdfs:comment>
+        <rdfs:label>Macroeconomic Indicator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Observation -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#Observation">
+        <rdfs:comment>A specific measurement of an indicator for a country in a given year. Core class linking country, year, indicator, and value.</rdfs:comment>
+        <rdfs:label>Observation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#PoliticalStability -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#PoliticalStability">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#GovernanceIndicator"/>
+        <rdfs:comment>WGI indicator (PV) capturing perceptions of government destabilization risk through unconstitutional means, violence, and terrorism. Range: -2.5 to +2.5 (higher = more stable).</rdfs:comment>
+        <rdfs:label>Political Stability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#PrivateDefaultRate -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#PrivateDefaultRate">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#DefaultRate"/>
+        <owl:disjointWith rdf:resource="https://gemr-kg.org/ontology#PublicDefaultRate"/>
+        <rdfs:comment>Default rate for private sector debt (704 observations, complete coverage).</rdfs:comment>
+        <rdfs:label>Private Default Rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#PrivateRecoveryRate -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#PrivateRecoveryRate">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#RecoveryRate"/>
+        <rdfs:comment>Recovery rate for private sector debt post-default (285 observations available).</rdfs:comment>
+        <rdfs:label>Private Recovery Rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#PublicDefaultRate -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#PublicDefaultRate">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#DefaultRate"/>
+        <rdfs:comment>Default rate for public sector debt (44 observations, sparse 33% coverage). Serves as proxy for sovereign default rates.</rdfs:comment>
+        <rdfs:label>Public Default Rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#RecoveryRate -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#RecoveryRate">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#CreditRiskIndicator"/>
+        <rdfs:comment>Measures the percentage of defaulted debt recovered through restructuring or liquidation.</rdfs:comment>
+        <rdfs:label>Recovery Rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#RegulatoryQuality -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#RegulatoryQuality">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#GovernanceIndicator"/>
+        <rdfs:comment>WGI indicator (RQ) capturing government ability to formulate and implement sound policies promoting private sector development. Range: -2.5 to +2.5 (higher = better quality).</rdfs:comment>
+        <rdfs:label>Regulatory Quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#RiskScore -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#RiskScore">
+        <rdfs:comment>Comprehensive country risk score (0-100) aggregating governance, economic health, default risk, external vulnerability, and contagion risk components for a specific year.</rdfs:comment>
+        <rdfs:label>Risk Score</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#RuleOfLaw -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#RuleOfLaw">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#GovernanceIndicator"/>
+        <rdfs:comment>WGI indicator (RL) capturing confidence in societal rules, contract enforcement, property rights, police and courts quality, and crime/violence likelihood. Range: -2.5 to +2.5 (higher = stronger rule of law).</rdfs:comment>
+        <rdfs:label>Rule of Law</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#StockMarket -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#StockMarket">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#MacroeconomicIndicator"/>
+        <rdfs:comment>Stock market indices in USD and local currency, leading indicator for default risk (6-18 month lead time).</rdfs:comment>
+        <rdfs:label>Stock Market Index</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Unemployment -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#Unemployment">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#MacroeconomicIndicator"/>
+        <rdfs:comment>Unemployment rate (seasonally adjusted), correlates positively with default risk.</rdfs:comment>
+        <rdfs:label>Unemployment Rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#VoiceAndAccountability -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#VoiceAndAccountability">
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#GovernanceIndicator"/>
+        <rdfs:comment>WGI indicator (VA) capturing citizens&apos; ability to participate in government selection, freedom of expression, association, and media freedom. Range: -2.5 to +2.5 (higher = more voice).</rdfs:comment>
+        <rdfs:label>Voice and Accountability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Year -->
+
+    <owl:Class rdf:about="https://gemr-kg.org/ontology#Year">
+        <rdfs:comment>A calendar year in the dataset range 2002-2023.</rdfs:comment>
+        <rdfs:label>Year</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Asia -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#Asia">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#GeographicRegion"/>
+        <rdfs:comment>Asian region cluster: China, Thailand, Philippines. Shared characteristics: export-dependent, manufacturing-based. High contagion risk within region.</rdfs:comment>
+        <rdfs:label>Asia</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Brazil -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#Brazil">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <hasRegion rdf:resource="https://gemr-kg.org/ontology#LatinAmerica"/>
+        <countryCode>BRA</countryCode>
+        <countryName>Brazil</countryName>
+        <rdfs:comment>Commodity-based economy with elevated governance risk and high volatility (Risk Score: 47/100 in 2023).</rdfs:comment>
+        <rdfs:label>Brazil</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Brazil_CC_2015 -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#Brazil_CC_2015">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <hasCountry rdf:resource="https://gemr-kg.org/ontology#Brazil"/>
+        <hasIndicator rdf:resource="https://gemr-kg.org/ontology#ControlOfCorruption"/>
+        <hasYear rdf:resource="https://gemr-kg.org/ontology#Year2015"/>
+        <observationValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-0.18</observationValue>
+        <rdfs:comment>Corruption control weakening during Brazil 2015 crisis period, contributing to economic instability.</rdfs:comment>
+        <rdfs:label>Brazil Control of Corruption 2015</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Brazil_RiskScore_2023 -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#Brazil_RiskScore_2023">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#RiskScore"/>
+        <hasCountry rdf:resource="https://gemr-kg.org/ontology#Brazil"/>
+        <hasYear rdf:resource="https://gemr-kg.org/ontology#Year2023"/>
+        <riskTier>ELEVATED_RISK</riskTier>
+        <totalRiskScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47</totalRiskScore>
+        <rdfs:comment>Brazil 2023: Elevated risk profile (47/100) driven by weak governance and high volatility. Contrasts with Poland&apos;s low risk profile (difference: 35 points).</rdfs:comment>
+        <rdfs:label>Brazil Risk Score 2023</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#China -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#China">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <hasRegion rdf:resource="https://gemr-kg.org/ontology#Asia"/>
+        <countryCode>CHN</countryCode>
+        <countryName>China</countryName>
+        <rdfs:comment>Manufacturing export-oriented economy with high government effectiveness but low voice and accountability (Risk Score: 58/100 in 2023).</rdfs:comment>
+        <rdfs:label>China</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#ControlOfCorruption -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#ControlOfCorruption"/>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#CurrencySpillover -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#CurrencySpillover">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#ContagionType"/>
+        <rdfs:comment>Currency crisis contagion through regional investor panic and capital flight. Immediate spillover (days to weeks).</rdfs:comment>
+        <rdfs:label>Currency Spillover</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Europe -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#Europe">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#GeographicRegion"/>
+        <rdfs:comment>European region: Poland (EU-integrated, strong governance, low contagion risk from other emerging markets).</rdfs:comment>
+        <rdfs:label>Europe</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#GDP -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#GDP"/>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#HighGovernanceCluster -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#HighGovernanceCluster">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#CountryCluster"/>
+        <hasClusterMember rdf:resource="https://gemr-kg.org/ontology#Poland"/>
+        <rdfs:comment>Countries with all WGI indicators &gt;+0.4: strong rule of law, low corruption, high regulatory quality. Low default risk and high resilience.</rdfs:comment>
+        <rdfs:label>High Governance Cluster</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#LatinAmerica -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#LatinAmerica">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#GeographicRegion"/>
+        <rdfs:comment>Latin American region cluster: Brazil, Mexico. Shared characteristics: commodity-dependence, weak governance, political volatility.</rdfs:comment>
+        <rdfs:label>Latin America</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Mexico -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#Mexico">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <hasRegion rdf:resource="https://gemr-kg.org/ontology#LatinAmerica"/>
+        <similarTo rdf:resource="https://gemr-kg.org/ontology#Brazil"/>
+        <countryCode>MEX</countryCode>
+        <countryName>Mexico</countryName>
+        <similarityScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.72</similarityScore>
+        <rdfs:comment>Mixed commodity-manufacturing economy with weak corruption control (CC: -1.021). High similarity to Brazil (0.72). Risk Score: 42/100 in 2023.</rdfs:comment>
+        <rdfs:label>Mexico</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Philippines -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#Philippines">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <hasRegion rdf:resource="https://gemr-kg.org/ontology#Asia"/>
+        <countryCode>PHL</countryCode>
+        <countryName>Philippines</countryName>
+        <rdfs:comment>Growing manufacturing economy with moderate governance and risk profile (Risk Score: 61/100 in 2023).</rdfs:comment>
+        <rdfs:label>Philippines</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Poland -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#Poland">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <belongsToCluster rdf:resource="https://gemr-kg.org/ontology#HighGovernanceCluster"/>
+        <hasRegion rdf:resource="https://gemr-kg.org/ontology#Europe"/>
+        <countryCode>POL</countryCode>
+        <countryName>Poland</countryName>
+        <rdfs:comment>EU-integrated economy with strong governance across all WGI dimensions (all scores &gt;+0.4). Lowest risk profile (Risk Score: 82/100 in 2023). Shows validated temporal chains: governance improvements → economic growth → reduced defaults.</rdfs:comment>
+        <rdfs:label>Poland</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Poland_RiskScore_2023 -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#Poland_RiskScore_2023">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#RiskScore"/>
+        <hasCountry rdf:resource="https://gemr-kg.org/ontology#Poland"/>
+        <hasYear rdf:resource="https://gemr-kg.org/ontology#Year2023"/>
+        <contagionRiskScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">65</contagionRiskScore>
+        <defaultRiskScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">95</defaultRiskScore>
+        <economicHealthScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">78</economicHealthScore>
+        <externalVulnerabilityScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">70</externalVulnerabilityScore>
+        <governanceScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">92</governanceScore>
+        <riskTier>LOW_RISK</riskTier>
+        <totalRiskScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">82</totalRiskScore>
+        <rdfs:comment>Poland 2023: Highest risk score (82/100) with excellent governance (92), low default risk (95), and strong economic health (78). Suitable for conservative portfolios.</rdfs:comment>
+        <rdfs:label>Poland Risk Score 2023</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#PoliticalCascade -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#PoliticalCascade">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#ContagionType"/>
+        <rdfs:comment>Political instability contagion through regional uncertainty and policy spillovers. Medium-term lag (3-12 months).</rdfs:comment>
+        <rdfs:label>Political Cascade</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Thailand -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#Thailand">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#Country"/>
+        <hasRegion rdf:resource="https://gemr-kg.org/ontology#Asia"/>
+        <countryCode>THA</countryCode>
+        <countryName>Thailand</countryName>
+        <rdfs:comment>Export-dependent manufacturing economy with strongest validated governance-economic relationships (CC→GDP: r=0.563, p=0.010). Risk Score: 64/100 in 2023.</rdfs:comment>
+        <rdfs:label>Thailand</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Thailand_CC_2014 -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#Thailand_CC_2014">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <causesWithLag rdf:resource="https://gemr-kg.org/ontology#Thailand_GDP_2015"/>
+        <hasCountry rdf:resource="https://gemr-kg.org/ontology#Thailand"/>
+        <hasIndicator rdf:resource="https://gemr-kg.org/ontology#ControlOfCorruption"/>
+        <hasYear rdf:resource="https://gemr-kg.org/ontology#Year2014"/>
+        <correlationCoefficient rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.563</correlationCoefficient>
+        <lagPeriodYears rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</lagPeriodYears>
+        <pValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.010</pValue>
+        <relationshipStrength>strong</relationshipStrength>
+        <rdfs:comment>Validated temporal relationship: Control of Corruption (t-1) → GDP Growth (t) with 1-year lag, statistically significant (p=0.010).</rdfs:comment>
+        <rdfs:label>Thailand Control of Corruption 2014</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Thailand_GDP_2015 -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#Thailand_GDP_2015">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+        <hasCountry rdf:resource="https://gemr-kg.org/ontology#Thailand"/>
+        <hasIndicator rdf:resource="https://gemr-kg.org/ontology#GDP"/>
+        <hasYear rdf:resource="https://gemr-kg.org/ontology#Year2015"/>
+        <rdfs:comment>GDP growth outcome following governance improvements in previous year. Part of validated temporal chain.</rdfs:comment>
+        <rdfs:label>Thailand GDP 2015</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#TradeBasedContagion -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#TradeBasedContagion">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#ContagionType"/>
+        <rdfs:comment>Contagion through trade linkages: export decline → GDP impact → default risk. Lag: 6-18 months.</rdfs:comment>
+        <rdfs:label>Trade-Based Contagion</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#WeakGovernanceCluster -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#WeakGovernanceCluster">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#CountryCluster"/>
+        <hasClusterMember rdf:resource="https://gemr-kg.org/ontology#Brazil"/>
+        <hasClusterMember rdf:resource="https://gemr-kg.org/ontology#Mexico"/>
+        <rdfs:comment>Countries with weak corruption control (CC &lt;-0.5) and political uncertainty. Higher default risk and vulnerability to shocks.</rdfs:comment>
+        <rdfs:label>Weak Governance Cluster</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Year2014 -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#Year2014"/>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Year2015 -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#Year2015">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#Year"/>
+        <yearValue rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2015</yearValue>
+        <rdfs:comment>Year of Brazil crisis: GDP decline -25.94%, default spike to 12-16%, currency depreciation.</rdfs:comment>
+        <rdfs:label>2015</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://gemr-kg.org/ontology#Year2023 -->
+
+    <owl:NamedIndividual rdf:about="https://gemr-kg.org/ontology#Year2023">
+        <rdf:type rdf:resource="https://gemr-kg.org/ontology#Year"/>
+        <yearValue rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2023</yearValue>
+        <rdfs:comment>Most recent year in dataset with complete risk score assessments for all six countries.</rdfs:comment>
+        <rdfs:label>2023</rdfs:label>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <rdfs:comment>Countries in High Governance Cluster must have all 6 WGI indicators &gt;+0.4 (strong rule of law, low corruption, high regulatory quality).</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="https://gemr-kg.org/ontology#ControlOfCorruption">
+        <rdfs:comment>WGI indicator (CC) capturing perceptions of public power exercised for private gain, including corruption and state capture. Range: -2.5 to +2.5 (higher = better control).</rdfs:comment>
+        <rdfs:label>Control of Corruption</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://gemr-kg.org/ontology#GDP">
+        <rdfs:comment>Gross Domestic Product at market prices in constant 2010 USD, current USD, and local currency units. Core indicator for economic growth analysis.</rdfs:comment>
+        <rdfs:label>Gross Domestic Product (GDP)</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://gemr-kg.org/ontology#ContagionEvent"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gemr-kg.org/ontology#affects"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://gemr-kg.org/ontology#Country"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#ContagionEvent"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://gemr-kg.org/ontology#ContagionEvent"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gemr-kg.org/ontology#originatesFrom"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://gemr-kg.org/ontology#Country"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#ContagionEvent"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://gemr-kg.org/ontology#Observation"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gemr-kg.org/ontology#hasCountry"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://gemr-kg.org/ontology#Country"/>
+            </owl:Restriction>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gemr-kg.org/ontology#hasIndicator"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://gemr-kg.org/ontology#Indicator"/>
+            </owl:Restriction>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gemr-kg.org/ontology#hasYear"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://gemr-kg.org/ontology#Year"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#Observation"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://gemr-kg.org/ontology#RiskScore"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://gemr-kg.org/ontology#totalRiskScore"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
+                            </rdf:Description>
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</xsd:maxInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="https://gemr-kg.org/ontology#RiskScore"/>
+    </owl:Class>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://gemr-kg.org/ontology#CreditRiskIndicator"/>
+            <rdf:Description rdf:about="https://gemr-kg.org/ontology#GovernanceIndicator"/>
+            <rdf:Description rdf:about="https://gemr-kg.org/ontology#MacroeconomicIndicator"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://gemr-kg.org/ontology#Brazil"/>
+            <rdf:Description rdf:about="https://gemr-kg.org/ontology#China"/>
+            <rdf:Description rdf:about="https://gemr-kg.org/ontology#Mexico"/>
+            <rdf:Description rdf:about="https://gemr-kg.org/ontology#Philippines"/>
+            <rdf:Description rdf:about="https://gemr-kg.org/ontology#Poland"/>
+            <rdf:Description rdf:about="https://gemr-kg.org/ontology#Thailand"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
