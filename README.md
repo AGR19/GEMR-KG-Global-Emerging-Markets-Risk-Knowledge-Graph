@@ -2,7 +2,7 @@
 
 The Goal of the project is to construct a knowledge graph and publish a research paper out of it.
 
-## UI Screenshot
+## UI
 
 ![UI Screenshot](data/img2.png)
 
@@ -138,3 +138,11 @@ Open your browser and go to the URL shown in the terminal (usually `http://local
 1. **Select a Country**: Click on a highlighted country (Gold color) on the globe.
 2. **View Stats**: The panel below the globe will populate with a line chart showing economic data.
 3. **Change Indicator**: Use the dropdown menu to switch between different economic indicators.
+
+# Authors
+- Adishesh Gonibeed Ravishankar
+- Hemakshi Pandey
+- Hitesh Kolluru
+- Lalitha Shreya Vanam
+- Likitha Sathvik Potineni
+- Srividya Bansal
