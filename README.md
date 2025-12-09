@@ -2,6 +2,10 @@
 
 The Goal of the project is to construct a knowledge graph and publish a research paper out of it.
 
+## UI Screenshot
+
+![UI Screenshot](data/img2.png)
+
 # Datasets
 
 1. World Bank : Global Economic Monitor
