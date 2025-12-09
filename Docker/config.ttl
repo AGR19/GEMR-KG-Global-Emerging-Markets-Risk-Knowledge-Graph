@@ -4,8 +4,8 @@
 @prefix sail: <http://www.openrdf.org/config/sail#> .
 @prefix graphdb: <http://www.ontotext.com/config/graphdb#> .
 
-<#test1> a rep:Repository ;
-    rep:repositoryID "test1" ;
+<#GEMR> a rep:Repository ;
+    rep:repositoryID "GEMR" ;
     rdfs:label "GraphDB Free repository" ;
     rep:repositoryImpl [
         rep:repositoryType "graphdb:SailRepository" ;
