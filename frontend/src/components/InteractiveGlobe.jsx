@@ -16,7 +16,7 @@ const InteractiveGlobe = ({ onCountrySelect, width, height }) => {
 
     useEffect(() => {
         // Load GeoJSON data
-        fetch('https://raw.githubusercontent.com/vasturiano/react-globe.gl/master/example/datasets/ne_110m_admin_0_countries.geojson')
+        fetch('/datasets/ne_110m_admin_0_countries.geojson')
             .then(res => res.json())
             .then(setCountries)
             .catch(err => console.error('Failed to load country data:', err));
@@ -33,8 +33,8 @@ const InteractiveGlobe = ({ onCountrySelect, width, height }) => {
         <Globe
             width={width}
             height={height}
-            globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-            backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+            globeImageUrl="/images/earth-night.jpg"
+            backgroundImageUrl="/images/night-sky.png"
             polygonsData={countries.features}
             polygonAltitude={d => d === hoverD && TARGET_COUNTRIES.includes(d.properties.NAME) ? 0.12 : 0.06}
             polygonCapColor={d => d === hoverD && TARGET_COUNTRIES.includes(d.properties.NAME) ? 'steelblue' : colorScale(d)}
