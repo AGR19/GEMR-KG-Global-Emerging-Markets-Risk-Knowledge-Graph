@@ -119,7 +119,6 @@ This project is a React-based frontend that visualizes economic data on an inter
 The frontend relies on the GraphDB backend. Make sure the container is running on port 7200.
 
 ```bash
-cd frontend
 # Run the custom GraphDB image (detached mode)
 docker run -d -p 7200:7200 --name graphdb-instance my-graphdb-image
 ```
